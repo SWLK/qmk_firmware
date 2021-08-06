@@ -639,22 +639,25 @@ void oled_task_user(void) {
 // }
 // #endif
 
+//? Set up for dual-handedness, need to manually set handedness in rules.mk.
+//* This is due to encoder being flipped (clockwise) if master is right.
+//* This checks which side is set to master and provides the corresponding keycodes.
 #ifdef ENCODER_ENABLE
-#ifdef MASTER_RIGHT
-void encoder_update_user(uint8_t index, bool clockwise) {
-    if (clockwise) {
-        tap_code(KC_VOLD);
-    } else {
-        tap_code(KC_VOLU);
-    }
-}
-#else
-void encoder_update_user(uint8_t index, bool clockwise) {
-    if (clockwise) {
-        tap_code(KC_VOLU);
-    } else {
-        tap_code(KC_VOLD);
-    }
-}
-#endif
+    #ifdef MASTER_RIGHT
+        void encoder_update_user(uint8_t index, bool clockwise) {
+            if (clockwise) {
+                tap_code(KC_VOLD);
+            } else {
+                tap_code(KC_VOLU);
+            }
+        }
+    #else
+        void encoder_update_user(uint8_t index, bool clockwise) {
+            if (clockwise) {
+                tap_code(KC_VOLU);
+            } else {
+                tap_code(KC_VOLD);
+            }
+        }
+    #endif
 #endif
