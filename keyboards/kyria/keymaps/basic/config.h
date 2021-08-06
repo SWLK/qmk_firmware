@@ -16,25 +16,12 @@
 
 #pragma once
 
+#define MASTER_RIGHT
+
 #ifdef OLED_DRIVER_ENABLE
   #define OLED_DISPLAY_128X64
 #endif
 
-#ifdef RGBLIGHT_ENABLE
-  #define RGBLIGHT_ANIMATIONS
-  #define RGBLIGHT_HUE_STEP 8
-  #define RGBLIGHT_SAT_STEP 8
-  #define RGBLIGHT_VAL_STEP 8
-#endif
-
-#define ENCODER_DIRECTION_FLIP
-// Fixing the skipping with the EC11K encoder
-#define ENCODER_RESOLUTION 2
-
-#define EE_HANDS
-
-// The Leader key allows to flexibly assign macros to key sequences.
-#define LEADER_PER_KEY_TIMING
-#define LEADER_TIMEOUT 350
-
-#define TAPPING_TERM 200
+// If you are using an Elite C rev3 on the slave side, uncomment the lines below:
+// #define SPLIT_USB_DETECT
+// #define NO_USB_STARTUP_CHECK
