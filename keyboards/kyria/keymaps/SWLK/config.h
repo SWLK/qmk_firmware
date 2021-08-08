@@ -16,7 +16,7 @@
 
 #pragma once
 
-#define MASTER_LEFT      //! Change this on compile time for each side for dual handedness
+#define MASTER_LEFT //! Change this on compile time for each side for dual handedness
 #define TAPPING_TERM 200
 //* Permissive hold allows mod hold + key to function within the tapping term
 #define PERMISSIVE_HOLD

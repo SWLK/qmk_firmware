@@ -9,4 +9,4 @@ BACKLIGHT_ENABLE = no
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
 MAGIC_ENABLE = no
-TAP_DANCE_ENABLE = no
+TAP_DANCE_ENABLE = yes	# Roughly 1k bytes, disable if full
